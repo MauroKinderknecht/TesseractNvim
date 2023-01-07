@@ -1,2 +1,2 @@
-./lua/tesseract/config/config.lua
-./lua/tesseract/config/editor.lua
+/lua/tesseract/config/*.lua
+!/lua/tesseract/config/*.template.lua
