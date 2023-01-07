@@ -14,7 +14,7 @@ local config = {
       
     },
   
-    -- Disable plugins default enabled by CosmicNvim
+    -- Disable plugins default enabled by tesseractNvim
     disable_builtin_plugins = {
       
     },
