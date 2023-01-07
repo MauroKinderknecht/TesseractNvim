@@ -6,7 +6,11 @@ local default_config = {
     border = 'rounded',
     disable_builtin_plugins = {},
     add_plugins = {},
-    plugins = {},
+    plugins = {
+      lsp_lines = {
+        enable_on_start = false,
+      },
+    },
     lsp = {
         format_on_save = true,
         format_timeout = 3000,
