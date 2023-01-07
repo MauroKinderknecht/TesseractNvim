@@ -1,8 +1,8 @@
 local cmp = require('cmp')
-local u = require('cosmic.utils')
+local u = require('tesseract.utils')
 local luasnip = require('luasnip')
-local user_config = require('cosmic.core.user')
-local icons = require('cosmic.utils.icons')
+local user_config = require('tesseract.core.user')
+local icons = require('tesseract.utils.icons')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 local has_words_before = function()

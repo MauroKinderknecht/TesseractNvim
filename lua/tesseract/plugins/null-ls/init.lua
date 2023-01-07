@@ -1,0 +1,34 @@
+
+
+local user_config = require('tesseract.core.user')
+local u = require('tesseract.utils')
+
+return {
+  'jose-elias-alvarez/null-ls.nvim',
+  config = function()
+    local defaults = require('tesseract.lsp.providers.defaults')
+    local null_ls = require('null-ls')
+    local config_opts = u.merge(user_config.lsp.servers.null_ls or {}, {
+      default_tesseract_sources = true,
+    })
+    if config_opts.default_tesseract_sources then
+      config_opts.sources = u.merge_list({
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.formatting.prettierd.with({
+          env = {
+            PRETTIERD_LOCAL_PRETTIER_ONLY = 1,
+          },
+        }),
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.code_actions.gitsigns,
+      }, config_opts.get_sources() or {})
+    end
+
+    null_ls.setup(u.merge(defaults, config_opts))
+  end,
+  event = 'VeryLazy',
+  enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'null_ls'),
+}

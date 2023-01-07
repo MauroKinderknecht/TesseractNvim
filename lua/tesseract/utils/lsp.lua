@@ -1,4 +1,4 @@
-ocal user_config = require('tesseract.core.user')
+local user_config = require('tesseract.core.user')
 local M = {}
 
 -- format current buffer w/user settings
