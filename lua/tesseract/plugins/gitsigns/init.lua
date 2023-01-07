@@ -73,3 +73,4 @@ return {
     }, user_config.plugins.gitsigns or {}))
   end,
   enabled = not vim.tbl_contains(user_config.disable_builtin_plugins, 'gitsigns'),
+}
